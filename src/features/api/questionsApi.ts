@@ -10,7 +10,7 @@ export const questionsApi = createApi({
          query: () => '/questions',
          providesTags: ['Questions'],
       }),
-      getQuestionById: builder.query<IQuestion, number>({
+      getQuestionById: builder.query<IQuestion, string>({
          query: (id) => `/questions/${id}`
       })
    })

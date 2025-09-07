@@ -1,10 +1,12 @@
+import type { IQuestion } from "../types/questionsTypes"
 import QuestionsItem from "./QuestionsItem"
 
-const QuestionsSearchResult = () => {
+const QuestionsSearchResult = ({ questions }: { questions: IQuestion[] }) => {
    return (
       <div className="mt-2.5">
-         <QuestionsItem />
-         <QuestionsItem />
+         {questions.map((item, index) => (
+            <QuestionsItem {...item} key={`${item.id}:${index}`} />
+         ))}
       </div>
    )
 }

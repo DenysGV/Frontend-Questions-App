@@ -2,7 +2,7 @@ import type { MouseEventHandler } from "react"
 import QuestionsDifficulty from "./QuestionsDifficulty"
 import Badge from "./UI/Badge"
 
-const QuestionsMainTop = ({ difficulty, showAnswerhanddler, isClue }: { difficulty: number, showAnswerhanddler: MouseEventHandler<HTMLDivElement>, isClue: boolean }) => {
+const QuestionsMainTop = ({ difficulty, id, showAnswerhanddler, isClue }: { difficulty: number, id: string, showAnswerhanddler: MouseEventHandler<HTMLDivElement>, isClue: boolean }) => {
    return (
       <div className="flex justify-between">
          <Badge pointer={true} clickHandler={showAnswerhanddler}>
@@ -15,7 +15,7 @@ const QuestionsMainTop = ({ difficulty, showAnswerhanddler, isClue }: { difficul
                </svg>}
          </Badge>
          <Badge isBig={true} pointer={false}>
-            <p>Питання №1</p>
+            <p>Питання №{id}</p>
          </Badge>
          <QuestionsDifficulty difficulty={difficulty} />
       </div>
